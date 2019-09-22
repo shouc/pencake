@@ -74,11 +74,11 @@ type EnvironmentStruct struct {
 ```go
 type SysInfoStruct struct {
 	Os       string
-    Arch     string
-    UserName string
-    Name     string
-    IsAdmin  bool
-    PublicIp string
+	Arch     string
+	UserName string
+	Name     string
+	IsAdmin  bool
+	PublicIp string
 }
 ```
 
@@ -87,6 +87,6 @@ type SysInfoStruct struct {
 ```go
 type WifiKeyStruct struct {
 	Name     string
-    Password string
+	Password string
 }
 ```
