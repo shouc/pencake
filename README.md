@@ -8,7 +8,7 @@ package main
 
 import (
 	"fmt"
-	"pencake"
+	"github.com/shouc/pencake"
 )
 
 func main()  {
