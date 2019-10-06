@@ -31,7 +31,7 @@ go get -u github.com/shouc/pencake
 | Function Name         | Description                              | Returns                      | Requirement                     | OS              |
 | --------------------- | ---------------------------------------- | ---------------------------- | ------------------------------- | --------------- |
 | `AskPass()`             | Ask user about their password            | `string` (user input)          | /                               | macOS           |
-| `ChromePassword()`      | Dump user's saved password in Chrome     | `pencake.ChromePasswordStruct` | root privilege on macOS & Linux | All             |
+| `ChromePassword()`      | Dump user's saved password in Chrome     | `pencake.ChromePasswordStruct` | root privilege on macOS & Linux | macOS / Windows             |
 | `ClearLogs()`           | Clear event logs                         | `bool` (whether successful)    | administrator                   | Windows         |
 | `DisableRemote()`       | Stop either SSH or RDP                   | /                            | root or administrator           | All             |
 | `Environment()`         | Get all environment variables            | `pencake.EnvironmentStruct`    | /                               | All             |
@@ -44,8 +44,8 @@ go get -u github.com/shouc/pencake
 | `Sleep()`               | Sleep system                             | /                            | /                               | All             |
 | `SysInfo()`             | Get system information                   | `pencake.SysInfoStruct`        | /                               | All             |
 | `Unsleep()`             | Exit sleeping                            | /                            | /                               | All             |
-| `VmScan()`              | Scan whether system is running on the VM | `string` (VM name)             | /                               | All             |
-| `WifiKey()`             | Get all saved WiFi names and passwords   | `pencake.WifiKeyStruct`        | depend on system                | All             |
+| `VmScan()`              | Scan whether system is running on the VM | `string` (VM name)             | /                               | macOS             |
+| `WifiKey()`             | Get all saved WiFi names and passwords   | `pencake.WifiKeyStruct`        | depend on system                | macOS             |
 
 
 ### Data Structure
