@@ -25,7 +25,6 @@ func getMacWifiKey() []WifiKeyStruct {
 	wifiSSIDs := utils.RunCommand("defaults read " +
 		"/Library/Preferences/SystemConfiguration/com.apple.airport.preferences KnownNetworks " +
 		"| grep 'SSIDString'")
-	fmt.Println(wifiSSIDs)
 	wifiNameRegex := regexp.MustCompile(` {8}SSIDString = (.+?);`)
 	wifiNames := wifiNameRegex.FindAllStringSubmatch(wifiSSIDs, -1)
 	var result []WifiKeyStruct
