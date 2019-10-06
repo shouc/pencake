@@ -31,7 +31,7 @@ func (b *DATA_BLOB) ToByteArray() []byte {
 }
 
 func usage() {
-	fmt.Println("Usage: ./d [encrypted_text]")
+	fmt.Println("Usage: d.exe [encrypted_text]")
 	flag.PrintDefaults()
 	os.Exit(2)
 }

